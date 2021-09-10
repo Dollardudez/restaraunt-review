@@ -14,6 +14,7 @@ app.use(express.json());
 app.get("/api/v1/restaurants", async (req, res)=>{
     try{
         const allRestaurants = await db.query("SELECT * FROM restaurants");
+        console.log(allRestaurants);
         res.status(200).json({
         status: "success", 
         results : allRestaurants.rows.length,
